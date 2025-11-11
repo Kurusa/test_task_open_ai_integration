@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\Actors\ActorCreateController;
+use App\Http\Controllers\Actors\ActorIndexController;
+
+Route::get('/', ActorCreateController::class)->name('actors.create');
+Route::get('/actors', ActorIndexController::class)->name('actors.index');
